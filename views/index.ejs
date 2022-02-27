@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- CSS Normalized -->
+    <link rel="stylesheet" href="css/normalized.css" />
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Ephesis Font & Open Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ephesis&family=Source+Serif+Pro:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- start header -->
+    <%- include('./header.ejs') %>
+    <!-- end header -->
+
+    <!-- start Home Section -->
+    <header id="home">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="intro">
+          <h3>Hi...</h3>
+          <h2>I'm Donia Shaker</h2>
+          <p>
+            Designer and developer devoted to crafting beautiful web experiences
+            focused on simplicity and purpose.
+          </p>
+        </div>
+        <div class="img"><img id="action" src="images/11.jpg" alt="" /></div>
+      </div>
+    </header>
+    <!-- end Home Section -->
+
+    <!-- start about Section -->
+    <%- include('./about.ejs') %>
+    <!-- end about Section -->
+
+    <!-- start services Section -->
+    <%- include('./services.ejs') %>
+
+    <!-- end services Section -->
+    <!-- Start Touch With Us  -->
+    <%- include('./touch-with-us.ejs') %>
+
+    <!-- End Touch With Us  -->
+
+    <!-- Start Footer -->
+    <%- include('./footer.ejs') %>
+    <!-- End Footer -->
+    <script src="app.js"></script>
+  </body>
+</html>
