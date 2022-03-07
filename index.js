@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 const { default: mongoose } = require("mongoose");
 app.set("view engine", "ejs");
-app.use(express.static("public/"));
+app.use(express.static("public"));
 app.use(express.urlencoded());
 const multer = require("multer");
 const Experiance = require("./public/js/experiance");
