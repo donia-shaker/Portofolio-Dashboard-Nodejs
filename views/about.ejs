@@ -4,35 +4,23 @@
     <div class="info">
       <p class="title">SKILLS</p>
       <div class="boxes">
+        <% for(var index = 0; index < skills.length ; index++) { %>
         <div class="box">
-          <img src="images/skills-1.png" alt="" />
-          <p>UX/UI Design</p>
+          <img src="images/<%= skills[index].image%>" alt="" />
+          <p><%= skills[index].name%></p>
         </div>
-        <div class="box">
-          <img src="images/skills-2.jpg" alt="" />
-          <p>Problem Solving Skills</p>
-        </div>
-        <div class="box">
-          <img src="images/skills-3.jpg" alt="" />
-          <p>Many Porogram Langauges</p>
-        </div>
+        <%}%>
       </div>
     </div>
     <div class="info">
       <p class="title">EXPERIENCE</p>
       <div class="boxes">
+        <% for(var index = 0; index < experiance.length ; index++) { %>
         <div class="box">
-          <img src="images/exp-3.jpg" alt="" />
-          <p>Design Websits In ACademy</p>
+          <img src="images/<%= experiance[index].image%>" alt="" />
+          <p><%= experiance[index].name%></p>
         </div>
-        <div class="box">
-          <img src="images/exp-2.jpg" alt="" />
-          <p>Woking In A.C Company</p>
-        </div>
-        <div class="box">
-          <img src="images/exp-1.jpg" alt="" />
-          <p>Working As FreeLancer</p>
-        </div>
+        <%}%>
       </div>
     </div>
   </div>

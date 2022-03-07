@@ -3,30 +3,13 @@
     <div class="content">
       <h2>Services That I Give You</h2>
       <div class="ser">
+        <% for(var index = 0; index < services.length ; index++) { %>
         <div class="box">
-          <h2>01</h2>
-          <h3>Web Design and Development</h3>
-          <p>
-            We will work through a structured design and development process to
-            deliver a responsive website that fulfils the vision.
-          </p>
+          <h2>0<%= index+1 %></h2>
+          <h3><%= services[index].name%></h3>
+          <p><%= services[index].description%></p>
         </div>
-        <div class="box">
-          <h2>02</h2>
-          <h3>Creative Direction</h3>
-          <p>
-            I can help you filter down ideas, work on storytelling for your
-            brand, and set clear objectives for the project.
-          </p>
-        </div>
-        <div class="box">
-          <h2>03</h2>
-          <h3>Photography</h3>
-          <p>
-            Depending on the size and scope of the project, if you require
-            photography, we can discuss ways in which I can help you.
-          </p>
-        </div>
+        <%}%>
       </div>
     </div>
   </div>
@@ -34,22 +17,12 @@
   <div class="info">
     <h2>My Works</h2>
     <div class="boxes">
-      <a href="https://donia-shaker.github.io/HTML-And-CSS-Template-One/">
-        <img src="images/work-1.PNG" alt="" />
+      <% for(var index = 0; index < mywork.length ; index++) { %>
+      <a href="<%= mywork[index].url %> ">
+        <img src="images/<%= mywork[index].image%>" alt="" />
         <p>Click</p>
       </a>
-      <a href="https://donia-shaker.github.io/HTML_And_CSS_Template_Two/">
-        <img src="images/work-2.PNG" alt="" />
-        <p>Click</p>
-      </a>
-      <a href="https://donia-shaker.github.io/HTML-And-CSS-Template-Three/">
-        <img src="images/work-3.PNG" alt="" />
-        <p>Click</p>
-      </a>
-      <a href="https://donia-shaker.github.io/HTML-And-CSS-Template-Four/">
-        <img src="images/work-4.PNG" alt="" />
-        <p>Click</p>
-      </a>
+      <%}%>
     </div>
   </div>
 </section>

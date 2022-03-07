@@ -30,13 +30,16 @@
       <div class="container">
         <div class="intro">
           <h3>Hi...</h3>
-          <h2>I'm Donia Shaker</h2>
-          <p>
-            Designer and developer devoted to crafting beautiful web experiences
-            focused on simplicity and purpose.
-          </p>
+          <h2>I'm <%=landing[landing.length-1].name%></h2>
+          <p><%=landing[landing.length-1].description%></p>
         </div>
-        <div class="img"><img id="action" src="images/11.jpg" alt="" /></div>
+        <div class="img">
+          <img
+            id="action"
+            src="images/<%=landing[landing.length-1].image%>"
+            alt=""
+          />
+        </div>
       </div>
     </header>
     <!-- end Home Section -->
