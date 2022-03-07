@@ -14,9 +14,9 @@ const landing = require("./public/js/landing");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    if (file.mimetype == "image/png") cb(null, "public/images/");
-    else if (file.mimetype == "image/jpeg") cb(null, "public/images/");
-    else if (file.mimetype == "application/pdf") cb(null, "public/pdf/");
+    if (file.mimetype == "image/png") cb(null, "public/images");
+    else if (file.mimetype == "image/jpeg") cb(null, "public/images");
+    else if (file.mimetype == "application/pdf") cb(null, "public/pdf");
   },
   filename: (req, file, cb) => {
     var extension = file.originalname.split(".");
@@ -339,13 +339,13 @@ app.post("/mywork/update/", upload.single("image"), (req, res, next) => {
   Mywork.updateOne(
     { _id: id },
     { url: req.body.url, image: req.file.filename },
-    (function (err, docs) {
+    function (err, docs) {
       if (err) {
         console.log(err);
       } else {
         console.log("Updated Docs : ", docs);
       }
-    })`  `
+    }
   );
   res.redirect("/mywork");
 });
@@ -397,9 +397,9 @@ app.get("/", async function (req, res, next) {
   });
 });
 
-app.get("/dashboard", function (req, res, next) {
-  res.render("dashboard", { title: "Express" });
-});
+// app.get("/dashboard", function (req, res, next) {
+//   res.render("dashboard", { title: "Express" });
+// });
 app.get("/404", function (req, res, next) {
   res.render("404", { title: "Express" });
 });

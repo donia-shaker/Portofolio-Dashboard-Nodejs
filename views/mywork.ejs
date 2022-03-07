@@ -75,7 +75,7 @@
                   <!-- start Update Modal -->
                   <div
                     class="modal fade position-fixed"
-                    id="exampleModalUpdate"
+                    id="exampleModalUpdate<%=mywork[index]._id%>"
                     tabindex="-1"
                     aria-labelledby="exampleModalUpdate<%=mywork[index]._id%>"
                     aria-hidden="true"
@@ -83,10 +83,7 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5
-                            class="modal-title"
-                            id="exampleModalLabelUpdate<%=mywork[index]._id%>"
-                          >
+                          <h5 class="modal-title" id="exampleModalLabelUpdate">
                             Add Education
                           </h5>
                           <button
@@ -117,8 +114,8 @@
                                   class="form-control"
                                   id="inputName"
                                   placeholder="Education"
-                                  required
                                   name="url"
+                                  value="<%=mywork[index].url%>"
                                 />
                               </div>
                               <div class="mb-3">
@@ -130,7 +127,7 @@
                                   class="form-control"
                                   id="inputEduEnd2"
                                   name="image"
-                                  required
+                                  value="<%=mywork[index].image%>"
                                 />
                               </div>
                               <div class="modal-footer">
