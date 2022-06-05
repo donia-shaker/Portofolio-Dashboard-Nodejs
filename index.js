@@ -12,10 +12,6 @@ const Mywork = require("./public/js/mywork");
 const Landing = require("./public/js/landings");
 const landing = require("./public/js/landings");
 const landings = require("./public/js/landings");
-app.use(function(req, res, next) {
-  res.setTimeout(200);
-  next();
-});
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
