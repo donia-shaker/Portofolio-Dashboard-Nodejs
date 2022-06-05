@@ -388,7 +388,7 @@ app.post("/mywork/delete/", (req, res, next) => {
   res.redirect("/mywork");
 });
 
-app.get("/index", async function (req, res, next) {
+app.get("/", async function (req, res, next) {
   var landing;
   await Landing.find({ is_active: 1 }).then(result => {
     landing = result;
