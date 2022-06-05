@@ -9,8 +9,9 @@ const Experiance = require("./public/js/experiance");
 const Skills = require("./public/js/skills");
 const Services = require("./public/js/services");
 const Mywork = require("./public/js/mywork");
-const Landing = require("./public/js/landing");
-const landing = require("./public/js/landing");
+const Landing = require("./public/js/landings");
+const landing = require("./public/js/landings");
+const landings = require("./public/js/landings");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -83,34 +84,55 @@ app.post("/authentication/login", (req, res) => {
 
 // Landing
 app.get("/dashboard", (req, res) => {
-  Landing.find({ is_active: 1 })
-    .then(reslut => {
-      console.log(reslut);
-      res.render("dashboard", { landing: reslut });
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
-app.post(
-  "/landing/update",
-  upload.fields([{ name: "image" }, { name: "cv" }]),
-  function (req, res) {
-    const i = new Landing({
-      name: req.body.name,
-      description: req.body.description,
-      email: req.body.email,
-      password: req.body.password,
-      image: req.files["image"][0].filename,
-      cv: req.files["cv"][0].filename,
-    });
-    i.save((error, result) => {
-      if (error) console.log(error);
-      else console.log(result);
-    });
-    // console.log(req.files["cv"][0].filename);
-    res.redirect("/dashboard");
-    console.log("data inserted successful");
+  Landing.count({}, function(error, numOfDocs) {
+    console.log('I have '+numOfDocs+' documents in my collection');
+    // ..
+  if (numOfDocs){     
+    Landing.find({ is_active: 1 })
+      .then(reslut => {
+        console.log(reslut);
+        res.render("dashboard", { landing: reslut });
+      })
+      .catch(error => {
+        console.log('error');
+      });
+    } else{
+      const i = new Landing({
+        name: 'name',
+        description: 'description',
+        email: 'email@gmail.com',
+        password:'password',
+        image: '11.jpg',
+        // cv: req.files["cv"][0].filename,
+      });
+      i.save((error, result) => {
+        if (error) console.log(error);
+        else console.log(result);
+        res.render("dashboard", { landing: result });
+      });
+    }
+  });
+
+  });
+  app.post(
+    "/landing/update",
+    upload.fields([{ name: "image" }, { name: "cv" }]),
+    function (req, res) {
+      const i = new Landing({
+        name: req.body.name,
+        description: req.body.description,
+        email: req.body.email,
+        password: req.body.password,
+        image: req.files["image"][0].filename,
+        cv: req.files["cv"][0].filename,
+      });
+      i.save((error, result) => {
+        if (error) console.log(error);
+        else console.log(result);
+      });
+      // console.log(req.files["cv"][0].filename);
+      res.redirect("/dashboard");
+      console.log("data inserted successful");
   }
 );
 

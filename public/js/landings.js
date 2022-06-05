@@ -6,10 +6,10 @@ const my_landing = new Shema({
   description: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  image: { type: String, required: true },
+  image: { type: String, required: true},
   is_active: { type: Number, default: 1 },
 });
 
-const landing = mongoose.model("landing", my_landing);
+const landings = mongoose.model("landings", my_landing);
 
-module.exports = landing;
+module.exports = landings;

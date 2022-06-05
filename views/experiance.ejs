@@ -89,7 +89,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabelUpdate">
-                            Add Education
+                            Updae Education
                           </h5>
                           <button
                             type="button"
@@ -133,6 +133,7 @@
                                   id="place"
                                   placeholder="Experince place"
                                   name="place"
+                                  value="<%=experiance[index].place%>"
                                 />
                               </div>
                               <div class="mb-3">
@@ -160,6 +161,10 @@
                                 />
                               </div>
                               <div class="mb-3">
+                                <div class="my-2 m-auto" style="font-size: 0;">
+                                  <img id="previewImage" 
+                                     style="max-height: 100px;">
+                                </div>
                                 <label class="form-label" for="inputEduEnd2"
                                   >Image</label
                                 >
@@ -169,6 +174,7 @@
                                   id="inputEduEnd2"
                                   name="image"
                                   value="<%=experiance[index].image%>"
+                                  oninput="previewImage.src=window.URL.createObjectURL(this.files[0])"
                                 />
                               </div>
                               <div class="modal-footer">
@@ -331,6 +337,10 @@
                   />
                 </div>
                 <div class="mb-3">
+                  <div class="my-2 m-auto" style="font-size: 0;">
+                    <img id="preview" 
+                       style="max-height: 100px;">
+                </div>
                   <label class="form-label" for="formFile">Image</label>
                   <input
                     type="file"
@@ -338,6 +348,7 @@
                     id="formFile"
                     required
                     name="image"
+                    oninput="preview.src=window.URL.createObjectURL(this.files[0])"
                   />
                   <!-- </div> -->
                 </div>
